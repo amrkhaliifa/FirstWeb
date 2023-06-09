@@ -6,7 +6,9 @@ let river = document.getElementById('river');
 let boat = document.getElementById('boat');
 let moon7 = document.getElementById('moon7');
 let amr = document.querySelector('.amr');
+let upBtn = document.getElementById('upBtn');
 window.onscroll = function() {
+    //animation of pic
     let valu = scrollY;
     stars.style.right = valu + 'px';
     moon.style.top = valu * 5 + 'px';
@@ -20,12 +22,14 @@ window.onscroll = function() {
     if (scrollY >= 70) {
         amr.style.fontSize = 70 + 'px';
         amr.style.position = 'fixed';
+        // amr khalifa display
         if (scrollY >= 475) {
             amr.style.display = 'none';
         } else {
             amr.style.display = 'block';
         }
     }
+    //change from Dark to light
     if (scrollY >= 72) {
         document.querySelector('.main').style.background = 'linear-gradient(rgb(97, 146, 239), rgb(149, 167, 192))';
         stars.style.display = 'none';
@@ -33,4 +37,19 @@ window.onscroll = function() {
         document.querySelector('.main').style.background = 'linear-gradient(rgb(7, 3, 45), rgb(21, 43, 72))';
         stars.style.display = 'block';
     }
+    // display button scroll up
+    if (scrollY >= 72) {
+
+        document.getElementById('upBtn').style.display = 'block';
+
+    } else {
+        document.getElementById('upBtn').style.display = 'none';
+
+    }
+
 }
+window.onclick =
+    // When the user clicks on the button, scroll to the top of the document
+    function upBtn() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
