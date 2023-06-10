@@ -19,6 +19,7 @@ window.onscroll = function() {
     boat.style.left = valu * 4 + 'px';
     amr.style.display = "block";
     amr.style.fontSize = valu + 'px';
+    // statement to stop fontsize of "Amr Khalifa" word
     if (scrollY >= 70) {
         amr.style.fontSize = 70 + 'px';
         amr.style.position = 'fixed';
